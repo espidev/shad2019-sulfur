@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900&display=swap"
+          rel="stylesheet">
+    <title>StreamSave</title>
+    <style>
+        body {
+            background-color: #546e7a;
+            margin: 60px;
+        }
+
+        .nunito {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 200;
+            color: white;
+        }
+
+        .menu-but {
+            color: white;
+        }
+        .title {
+            font-size: 36px;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+
+<div class="nunito left-align title" style="font-weight: 600"><a data-target="slide-out" class="btn-flat sidenav-trigger"> <i class="material-icons menu-but" style="font-size: 36px">menu</i></a>streamSave</div>
+
+<ul id="slide-out" class="sidenav">
+    <li><div class="user-view">
+            <div class="background">
+                <img src="data:image/jpeg;base64,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">
+            </div>
+            <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
+            <a href="#name"><span class="white-text name">John Doe</span></a>
+            <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+        </div></li>
+    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+    <li><a href="#!">Second Link</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Subheader</a></li>
+    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+</ul>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems, options);
+    });
+    M.AutoInit();
+</script>
+</body>
+</html>
