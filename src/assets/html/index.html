@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900&display=swap"
+          rel="stylesheet">
+    <title>StreamSave</title>
+    <style>
+        body {
+            background-color: #546e7a;
+            margin: 60px;
+        }
+
+        .nunito {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 200;
+            color: white;
+        }
+
+        .menu-but {
+            color: white;
+        }
+        .title {
+            font-size: 36px;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+
+<!--<div class="nunito left-align title" style="font-weight: 600"><a data-target="mobile-demo" class="btn-flat sidenav-trigger"> <i class="material-icons menu-but" style="font-size: 36px">menu</i></a>streamSave</div>
+-->
+
+<nav>
+    <div class="nav-wrapper blue-grey">
+        <a href="#!" class="brand-logo nunito" style="font-weight: 600">StreamSave</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+            <li><img src=""></li>
+            <li><a href="index.html" style="color: white"><i class="material-icons menu-but" style="font-size: 36px; color: white;">home</i> Home</a></li>
+            <li><a href="devices.html" style="color: white"><i class="material-icons menu-but" style="font-size: 36px; color: white;">devices</i> Devices</a></li>
+            <li><a href="settings.html" style="color: white"><i class="material-icons menu-but" style="font-size: 36px; color: white;">settings</i> Settings</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<ul class="sidenav nunito pink" id="mobile-demo">
+    <li><img src=""></li>
+    <li><a href="index.html" style="color: white"><i class="material-icons menu-but" style="font-size: 36px; color: white;">home</i> Home</a></li>
+    <li><a href="devices.html" style="color: white"><i class="material-icons menu-but" style="font-size: 36px; color: white;">devices</i> Devices</a></li>
+    <li><a href="settings.html" style="color: white"><i class="material-icons menu-but" style="font-size: 36px; color: white;">settings</i> Settings</a></li>
+</ul>
+
+<div class="nunito title">
+{{ .flowTotal }}
+    <br/>
+{{ .flowRate }}
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+    M.AutoInit();
+</script>
+</body>
+</html>

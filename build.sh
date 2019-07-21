@@ -2,4 +2,4 @@
 
 cd src/main
 go build ./...
-mv ./EspiSite ../../
+mv ./shad2019-sulfur ../../

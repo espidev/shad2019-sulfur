@@ -1,4 +1,4 @@
 #!/bin/bash
 
 ./build.sh
-./EspiSite
+./shad2019-sulfur
