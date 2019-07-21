@@ -70,7 +70,7 @@
     <p class="center nunito titling">today <i class="material-icons" style="font-size: 36px; color: white;">track_changes</i></p>
 <div class="card gradient-shadow gradient-45deg-light-blue-teal">
     <div class="card-content white-text">
-        <span class="card-title nunito titling">usage: <b style="font-weight: 800;">{{.flowTotal}} mL</b></span>
+        <span class="card-title nunito titling">usage: <b style="font-weight: 800;" id="flow_day">{{.flowTotal}} mL</b></span>
     </div>
 </div>
 </div>
@@ -79,7 +79,7 @@
     <p class="center nunito titling">this week <i class="material-icons" style="font-size: 36px; color: white;">timeline</i></p>
     <div class="card gradient-shadow gradient-45deg-reverse">
         <div class="card-content white-text">
-            <span class="card-title nunito titling">usage: <b style="font-weight: 800;"><script>document.write(72+(({{.flowTotal}})/1000));</script> L</b></span>
+            <span class="card-title nunito titling">usage: <b style="font-weight: 800;" id="flow_week"><script>document.write(72+(({{.flowTotal}})/1000));</script> L</b></span>
         </div>
     </div>
 </div>
@@ -101,6 +101,11 @@ temp flow rate: {{ .flowRate }} mL/s
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script>
     M.AutoInit();
+    setInterval(async () => {
+        const response = await fetch("https://stream.espi.dev/totalvol");
+        const jsons = await response.json();
+        document.getElementById("flow_day").innerText = jsons.amount + " mL"
+    }, 1000);
 </script>
 </body>
 </html>
