@@ -79,12 +79,12 @@ func main() {
 	quit := make(chan os.Signal)
 	signal.Notify(quit, os.Interrupt)
 	<-quit
-	log.Println("Shutting down EspiSite...")
+	log.Println("Shutting down SHAD2019-Sulfur...")
 
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
 	if err := srv.Shutdown(ctx); err != nil {
 		log.Fatal("Server shutdown: ", err)
 	}
-	log.Println("EspiSite has stopped.")
+	log.Println("SHAD2019-Sulfur has stopped.")
 }
