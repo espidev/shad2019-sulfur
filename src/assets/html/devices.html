@@ -180,7 +180,7 @@
         const jsons = await response.json(), jsons2 = await response2.json();
         document.getElementById("flow_day").innerText = jsons.amount + " mL";
         document.getElementById("flow_week").innerText = 72.0 + (jsons.amount / 1000) + " L";
-        document.getElementById("flow_cur").innerText = jsons2.amount + " mL";
+        document.getElementById("flow_cur").innerText = jsons2.amount + " mL/s";
 
         if (jsons.amount > 1000) {
             document.getElementById("tip").innerHTML = `
