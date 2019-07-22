@@ -61,7 +61,7 @@
 
 <ul class="sidenav nunito amber darken-4" id="mobile-demo">
     <li><img src=""></li>
-    <li><a href="index.html" style="color: white"><i class="material-icons menu-but" style="font-size: 36px; color: white;">home</i> Home</a></li>
+    <li><a href="/" style="color: white"><i class="material-icons menu-but" style="font-size: 36px; color: white;">home</i> Home</a></li>
     <li><a href="devices.html" style="color: white"><i class="material-icons menu-but" style="font-size: 36px; color: white;">devices</i> Devices</a></li>
     <li><a href="settings.html" style="color: white"><i class="material-icons menu-but" style="font-size: 36px; color: white;">settings</i> Settings</a></li>
 </ul>
@@ -104,8 +104,9 @@ temp flow rate: {{ .flowRate }} mL/s
     setInterval(async () => {
         const response = await fetch("https://stream.espi.dev/totalvol");
         const jsons = await response.json();
-        document.getElementById("flow_day").innerText = jsons.amount + " mL"
-    }, 1000);
+        document.getElementById("flow_day").innerText = jsons.amount + " mL";
+        document.getElementById("flow_week").innerText = 72.0 + (jsons.amount/1000) + " L";
+    }, 100);
 </script>
 </body>
 </html>

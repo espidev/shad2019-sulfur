@@ -1,10 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900&display=swap"
+          rel="stylesheet">
+    <title>StreamSave</title>
+    <style>
+        body {
+            background-color: #00bcd4;
+            margin: 60px;
+        }
+
+        .nunito {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 200;
+            color: white;
+        }
+
+        .menu-but {
+            color: white;
+        }
+        .title {
+            font-size: 36px;
+        }
+        .titling {
+            letter-spacing: 2px;
+            font-size: 32px;
+        }
+
+        .gradient-45deg-light-blue-teal {
+            background: -webkit-linear-gradient(45deg, #4dd0e1 0%, #ffecb3 100%);
+            background: linear-gradient(45deg, #4dd0e1 0%, #ffecb3 100%);
+        }
+        .gradient-45deg-light-blue-teal.gradient-shadow {
+            box-shadow: 0 6px 20px 0 rgba(100, 255, 218, 0.5);
+        }
+
+        .gradient-45deg-reverse {
+            background: -webkit-linear-gradient(45deg, #26c6da 0%, #fffde7 170%);
+            background: linear-gradient(45deg, #26c6da 0%, #fffde7 170%);
+        }
+        .gradient-45deg-reverse.gradient-shadow {
+            box-shadow: 0 6px 20px 0 rgba(100, 255, 218, 0.5);
+        }
+
+        .gradient-45deg-green {
+            background: -webkit-linear-gradient(45deg, #00e676 0%, #1de9b6 170%);
+            background: linear-gradient(45deg, #00e676 0%, #1de9b6 170%);
+        }
+        .gradient-45deg-green.gradient-shadow {
+            box-shadow: 0 6px 20px 0 rgba(100, 255, 218, 0.5);
+        }
+
+        .listi {
+            font-size: 18px;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
 
+<div class="nunito left-align title" style="font-weight: 600"><a data-target="mobile-demo" class="btn-flat sidenav-trigger"> <i class="material-icons menu-but" style="font-size: 24px">menu</i></a>StreamSave</div>
+
+<ul class="sidenav nunito amber darken-4" id="mobile-demo">
+    <li><img src=""></li>
+    <li><a href="/" style="color: white"><i class="material-icons menu-but" style="font-size: 36px; color: white;">home</i> Home</a></li>
+    <li><a href="devices.html" style="color: white"><i class="material-icons menu-but" style="font-size: 36px; color: white;">devices</i> Devices</a></li>
+    <li><a href="settings.html" style="color: white"><i class="material-icons menu-but" style="font-size: 36px; color: white;">settings</i> Settings</a></li>
+</ul>
+
+<div class="col s12 m6">
+    <p class="center nunito titling">settings <i class="material-icons" style="font-size: 36px; color: white;">track_changes</i></p>
+    <ul class="collection listi nunito gradient-45deg-reverse gradient-shadow">
+        <li class="collection-item gradient-45deg-reverse gradient-shadow">
+            <i class="material-icons">notifications</i> <b style="font-weight: 600">notifications</b>
+            <div class="secondary-content">
+                <div class="switch">
+                    <label>
+                        <input type="checkbox">
+                        <span class="lever"></span>
+                    </label>
+                </div>
+            </div>
+        </li>
+
+        <li class="collection-item gradient-45deg-reverse gradient-shadow">
+            <i class="material-icons">warning</i> <b style="font-weight: 600">warn when limit reached</b>
+            <div class="secondary-content">
+                <div class="switch">
+                    <label>
+                        <input type="checkbox">
+                        <span class="lever"></span>
+                    </label>
+                </div>
+            </div>
+        </li>
+
+    </ul>
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+    M.AutoInit();
+</script>
 </body>
 </html>
