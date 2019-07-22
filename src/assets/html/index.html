@@ -95,17 +95,18 @@
 
 <div class="nunito title">
     <br/>
-temp flow rate: {{ .flowRate }} mL/s
+    temp flow rate: <div id="flow_cur">{{ .flowRate }}</div> mL/s
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script>
     M.AutoInit();
     setInterval(async () => {
-        const response = await fetch("https://stream.espi.dev/totalvol");
-        const jsons = await response.json();
+        const response = await fetch("https://stream.espi.dev/totalvol"), response2 = await fetch("https://stream.espi.dev/flowvol");
+        const jsons = await response.json(), jsons2 = await response2.json();
         document.getElementById("flow_day").innerText = jsons.amount + " mL";
         document.getElementById("flow_week").innerText = 72.0 + (jsons.amount/1000) + " L";
+        document.getElementById("flow_cur").innerText = jsons2.amount + "";
     }, 100);
 </script>
 </body>
