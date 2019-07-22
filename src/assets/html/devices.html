@@ -1,10 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900&display=swap"
+          rel="stylesheet">
+    <title>StreamSave</title>
+    <style>
+        body {
+            background-color: #00bcd4;
+            margin: 60px;
+        }
+
+        .title {
+            font-size: 36px;
+        }
+
+        .nunito {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 200;
+            color: white;
+        }
+
+        .menu-but {
+            color: white;
+        }
+        .titling {
+            letter-spacing: 2px;
+            font-size: 32px;
+        }
+
+        .gradient-45deg-light-blue-teal {
+            background: -webkit-linear-gradient(45deg, #4dd0e1 0%, #ffecb3 100%);
+            background: linear-gradient(45deg, #4dd0e1 0%, #ffecb3 100%);
+        }
+        .gradient-45deg-light-blue-teal.gradient-shadow {
+            box-shadow: 0 6px 20px 0 rgba(100, 255, 218, 0.5);
+        }
+
+        .gradient-45deg-reverse {
+            background: -webkit-linear-gradient(45deg, #26c6da 0%, #fffde7 170%);
+            background: linear-gradient(45deg, #26c6da 0%, #fffde7 170%);
+        }
+        .gradient-45deg-reverse.gradient-shadow {
+            box-shadow: 0 6px 20px 0 rgba(100, 255, 218, 0.5);
+        }
+
+        .gradient-45deg-green {
+            background: -webkit-linear-gradient(45deg, #00e676 0%, #1de9b6 170%);
+            background: linear-gradient(45deg, #00e676 0%, #1de9b6 170%);
+        }
+        .gradient-45deg-green.gradient-shadow {
+            box-shadow: 0 6px 20px 0 rgba(100, 255, 218, 0.5);
+        }
+
+        .gradient-45deg-red {
+            background: -webkit-linear-gradient(45deg, #e91e63 0%, #1de9b6 170%);
+            background: linear-gradient(45deg, #e91e63 0%, #1de9b6 170%);
+        }
+        .gradient-45deg-red.gradient-shadow {
+            box-shadow: 0 6px 20px 0 rgba(100, 255, 218, 0.5);
+        }
+
+        .header-t {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
 
+<div class="nunito left-align title" style="font-weight: 600"><a data-target="mobile-demo" class="btn-flat sidenav-trigger"> <i class="material-icons menu-but" style="font-size: 24px">menu</i></a>StreamSave</div>
+
+<ul class="sidenav nunito amber darken-4" id="mobile-demo">
+    <li><img src=""></li>
+    <li><a href="/" style="color: white"><i class="material-icons menu-but" style="font-size: 36px; color: white;">home</i> Home</a></li>
+    <li><a href="devices" style="color: white"><i class="material-icons menu-but" style="font-size: 36px; color: white;">devices</i> Devices</a></li>
+    <li><a href="settings" style="color: white"><i class="material-icons menu-but" style="font-size: 36px; color: white;">settings</i> Settings</a></li>
+</ul>
+
+<div class="col s12 m6">
+    <p class="center nunito titling">devices <i class="material-icons" style="font-size: 36px; color: white;">device_hub</i></p>
+    <ul class="collapsible gradient-45deg-light-blue-teal gradient-shadow">
+        <li>
+            <div class="collapsible-header nunito header-t gradient-45deg-light-blue-teal gradient-shadow">
+                <i class="material-icons">bubble_chart</i>
+                kitchen sink
+            </div>
+            <div class="collapsible-body nunito header-t">
+                <p>
+                    looking good bro
+                </p>
+            </div>
+        </li>
+    </ul>
+    <ul class="collapsible gradient-45deg-light-blue-teal gradient-shadow">
+        <li>
+            <div class="collapsible-header nunito header-t gradient-45deg-light-blue-teal gradient-shadow">
+                <i class="material-icons">bubble_chart</i>
+                first floor washroom
+            </div>
+        </li>
+    </ul>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+    M.AutoInit();
+    setInterval(async () => {
+        const response = await fetch("https://stream.espi.dev/totalvol"), response2 = await fetch("https://stream.espi.dev/flowvol");
+        const jsons = await response.json(), jsons2 = await response2.json();
+        document.getElementById("flow_day").innerText = jsons.amount + " mL";
+        document.getElementById("flow_week").innerText = 72.0 + (jsons.amount/1000) + " L";
+        document.getElementById("flow_cur").innerText = jsons2.amount + "";
+
+        if (jsons.amount > 1000) {
+            document.getElementById("tip").innerHTML = `
+            <p class="center nunito titling">tip <i class="material-icons" style="font-size: 36px; color: white;">lightbulb_outline</i></p>
+    <div class="card gradient-45deg-red gradient-shadow">
+        <div class="card-content white-text">
+            <span class="card-title nunito titling"><b style="font-weight: 800;">slow down!</b><br/>you are above your weekly average in water consumption!</span>
+        </div>
+    </div>
+            `
+        }
+    }, 500);
+</script>
 </body>
 </html>
