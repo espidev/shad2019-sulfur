@@ -43,6 +43,9 @@ func main() {
 			"flowRate": flowVol,
 		})
 	})
+	router.GET("/settings", func (c *gin.Context) {
+		c.HTML(http.StatusOK, "settings.html", gin.H{})
+	})
 	router.GET("/flowvol", func(c *gin.Context) {
 		c.JSON(200, gin.H{"amount": flowVol})
 	})
