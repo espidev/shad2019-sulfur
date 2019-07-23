@@ -175,8 +175,7 @@
 <script>
     M.AutoInit();
     setInterval(async () => {
-        const response = await fetch("https://stream.espi.dev/totalvol"),
-            response2 = await fetch("https://stream.espi.dev/flowvol");
+        const response = await fetch("https://stream.espi.dev/totalvol"), response2 = await fetch("https://stream.espi.dev/flowvol");
         const jsons = await response.json(), jsons2 = await response2.json();
         document.getElementById("flow_day").innerText = jsons.amount + " mL";
         document.getElementById("flow_week").innerText = 72.0 + (jsons.amount / 1000) + " L";
